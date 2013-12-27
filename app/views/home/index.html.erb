@@ -39,11 +39,18 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
+      var youAreHereWindow = new google.maps.InfoWindow({
+        content: "YOU ARE HERE"
+      });
+
       var markerCenter = new google.maps.Marker({
         map: map,
         position: pos,
         title: 'You are Here',
         icon: "<%= asset_path('yorubamask.gif') %>"
+      });
+      google.maps.event.addListener(markerCenter, 'click', function() {
+        youAreHereWindow.open(map, markerCenter);
       });
       markerCenter.setMap(map);
 
