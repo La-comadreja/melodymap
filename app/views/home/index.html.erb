@@ -31,6 +31,31 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
+  // Dropdown control
+  var controlDiv = document.createElement('div');
+
+  // Setting padding to 5 px will offset the control
+  // from the edge of the map.
+  controlDiv.style.padding = '5px';
+  
+  // Set CSS for the control border.
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.borderStyle = 'solid';
+  controlUI.style.borderWidth = '0px';
+  controlUI.style.borderRadius = '7px';
+  controlUI.style.cursor = 'default';
+  controlUI.style.textAlign = 'center';
+  controlDiv.appendChild(controlUI);
+  
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.innerHTML = '<form action=\"\"><select name=\"dates\">' +
+    '<option value=\"Sat., Dec. 28, 2013\">Sat., Dec. 28, 2013</option>' +
+    '<option value=\"Sun., Dec. 29, 2013\">Sun., Dec. 29, 2013</option>' +
+    '</select></form>'
+  controlUI.appendChild(controlText);
+
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -59,6 +84,7 @@ function initialize() {
     handleNoGeolocation(false);
   }
   new google.maps.TransitLayer().setMap(map);
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(controlDiv);
 }
 
 function handleNoGeolocation(errorFlag) {
