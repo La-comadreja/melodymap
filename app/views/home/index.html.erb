@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -31,18 +30,15 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-  new google.maps.TransitLayer().setMap(map);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
-
       var youAreHereWindow = new google.maps.InfoWindow({
         content: "YOU ARE HERE"
       });
-
       var markerCenter = new google.maps.Marker({
         map: map,
         position: pos,
@@ -62,22 +58,14 @@ function initialize() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
+  new google.maps.TransitLayer().setMap(map);
 }
 
 function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
-
   var options = {
     map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
+    position: new google.maps.LatLng(40.732, -73.984),
   };
-
-  var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
 
