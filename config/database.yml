@@ -58,5 +58,5 @@ production:
   encoding: unicode
   database: melodymap_production
   pool: 5
-#  username: postgres
+  username: postgres
   password:
