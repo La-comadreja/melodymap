@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: melodymap_development
   pool: 5
-  username: postgres
+#  username: postgres
 #  password: Zozo2Kx$
   password:
 
@@ -49,7 +49,7 @@ test:
   encoding: unicode
   database: melodymap_test
   pool: 5
-  username: postgres
+#  username: postgres
 #  password: Zozo2Kx$
   password:
 
