@@ -51,8 +51,9 @@ function initialize() {
   // Set CSS for the control interior.
   var controlText = document.createElement('div');
   controlText.innerHTML = '<form action=\"\"><select name=\"dates\">' +
-    '<option value=\"<% @time.inspect %>\"><%= @time.inspect %></option>' +
-    '<option value=\"Sun., Dec. 29, 2013\">Sun., Dec. 29, 2013</option>' +
+    <% for i in 0...7 %>
+      '<option value=\"<% @days[i] %>\"><%= @days[i] %></option>' +
+    <% end %>
     '</select></form>'
   controlUI.appendChild(controlText);
 
