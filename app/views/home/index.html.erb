@@ -51,13 +51,13 @@ function initialize() {
   // Set CSS for the control interior.
   var controlText = document.createElement('div');
   controlText.innerHTML = '<form action=\"\"><select name=\"dates\">' +
-    '<option value=\"Sat., Dec. 28, 2013\">Sat., Dec. 28, 2013</option>' +
+    '<option value=\"<% @time.inspect %>\"><%= @time.inspect %></option>' +
     '<option value=\"Sun., Dec. 29, 2013\">Sun., Dec. 29, 2013</option>' +
     '</select></form>'
   controlUI.appendChild(controlText);
 
   // Try HTML5 geolocation
-  if(navigator.geolocation) {
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
