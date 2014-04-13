@@ -3,8 +3,7 @@ class HomeController < ApplicationController
     @time = Time.now
     @days = []
     for i in 0...7
-      @day = @time.strftime("%A, %B %d")
-      @days.append(@day)
+      @days.append(@time.strftime("%A, %B %d"))
       @time += 86400 
     end
   end
