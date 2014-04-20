@@ -51,7 +51,7 @@ function initialize() {
   // Set CSS for the control interior.
   var controlText = document.createElement('div');
   controlText.innerHTML = '<form action=\"/\" id=\"dailyEvents\"><select name=\"date\">' +
-    <% for i in 0...7 %>
+    <% for i in 0...@NUM_DAYS %>
       '<option ' +
       <% if params[:date] == i.to_s %>
         'selected ' +
