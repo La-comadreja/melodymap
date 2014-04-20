@@ -52,7 +52,11 @@ function initialize() {
   var controlText = document.createElement('div');
   controlText.innerHTML = '<form action=\"/\" id=\"dailyEvents\"><select name=\"date\">' +
     <% for i in 0...7 %>
-      '<option name=\"<%= @days[i] %>\" value=\"<%= i %>\"><%= @days[i] %></option>' +
+      '<option ' +
+      <% if params[:date] == i.to_s %>
+        'selected ' +
+      <% end %>
+      'name=\"<%= @days[i] %>\" value=\"<%= i %>\"><%= @days[i] %></option>' +
     <% end %>
     '</select><input type=\"submit\" value=\"Show Concerts\"/></form>'
   controlUI.appendChild(controlText);
