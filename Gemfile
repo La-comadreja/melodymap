@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
+require 'open-uri'
+require 'rubygems'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 ruby '2.0.0'
 
+gem 'nokogiri'
+gem 'protected_attributes'
 gem 'rails_12factor'
 
 # Use pg as the database for Active Record

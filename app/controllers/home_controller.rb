@@ -8,5 +8,7 @@ class HomeController < ApplicationController
       @search_days.append(@time.strftime("%Y-%m-%d"))
       @time += 86400 
     end
+
+    
   end
 end
