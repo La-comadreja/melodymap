@@ -9,7 +9,6 @@ done
 cd pages
 cat $(ls) > mySocialist.txt
 sed "s/listingRow '>/listingRow'>/g" mySocialist.txt > mySocialist2.txt
-rm mySocialist.txt
 mv mySocialist2.txt ../app/views/home/mySocialist.txt
 cd ..
 git add .
