@@ -34,6 +34,8 @@ class HomeController < ApplicationController
         @addresses.append(address)
       end
     end
+
+    gon.addresses = @addresses
   end
 
   def extr(s, str)
