@@ -1,4 +1,4 @@
-rm pages/*
+git rm pages/*
 i=1
 while [ $i -le 5 ];
 do
@@ -13,3 +13,4 @@ cd ..
 git add .
 git commit -m "Update the list of shows"
 git push
+git push heroku master
