@@ -24,7 +24,7 @@
 
 var map;
 var geocoder;
-var infoWindows = new Array(100);
+var infoWindows = new Array(gon.events.length);
 
 function initialize() {
   var mapOptions = {
@@ -64,8 +64,6 @@ function initialize() {
     '</select><input type=\"submit\" value=\"Show Concerts\"/></form>'
   controlUI.appendChild(controlText);
 
-  console.log("Initializing");
-
   // Try HTML5 geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -96,13 +94,11 @@ function initialize() {
   new google.maps.TransitLayer().setMap(map);
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(controlDiv);
 
-  console.log("Hello");
   for (var i = 0; i < gon.addresses.length; i++) {
     var j = 0;
     while (!codeAddress(gon.addresses[i], i) && j < 3) {
       j++;
     }
-    console.log(gon.addresses[i]);
   }
 }
 
