@@ -10,6 +10,7 @@ cd pages
 cat $(ls) > mySocialist.txt
 sed "s/listingRow '>/listingRow'>/g" mySocialist.txt > mySocialist2.txt
 mv mySocialist2.txt ../app/views/home/mySocialist.txt
+rm mySocialist.txt
 cd ..
 git add .
 git commit -m "Update the list of shows"
