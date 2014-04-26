@@ -36,6 +36,7 @@ class HomeController < ApplicationController
     end
 
     gon.addresses = @addresses
+    gon.events = @events
   end
 
   def extr(s, str)

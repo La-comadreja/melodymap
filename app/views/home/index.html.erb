@@ -23,6 +23,8 @@
 // is probably because you have denied permission for location sharing.
 
 var map;
+var geocoder;
+var infoWindows = new Array(100);
 
 function initialize() {
   var mapOptions = {
@@ -30,6 +32,7 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+  geocoder = new google.maps.Geocoder();
 
   // Dropdown control
   var controlDiv = document.createElement('div');
@@ -61,6 +64,8 @@ function initialize() {
     '</select><input type=\"submit\" value=\"Show Concerts\"/></form>'
   controlUI.appendChild(controlText);
 
+  console.log("Initializing");
+
   // Try HTML5 geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -90,6 +95,15 @@ function initialize() {
   }
   new google.maps.TransitLayer().setMap(map);
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(controlDiv);
+
+  console.log("Hello");
+  for (var i = 0; i < gon.addresses.length; i++) {
+    var j = 0;
+    while (!codeAddress(gon.addresses[i], i) && j < 3) {
+      j++;
+    }
+    console.log(gon.addresses[i]);
+  }
 }
 
 function handleNoGeolocation(errorFlag) {
@@ -98,6 +112,39 @@ function handleNoGeolocation(errorFlag) {
     position: new google.maps.LatLng(40.732, -73.984),
   };
   map.setCenter(options.position);
+}
+
+function codeAddress(address, i) {
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow(i).open(map, marker);
+      });
+    }
+    else {
+      if (status == "OVER_QUERY_LIMIT") {
+        setTimeout(function(){ codeAddress(address, i); }, 2014);
+        return status == google.maps.GeocoderStatus.OK;
+      }
+    }
+  });
+  return true;
+}
+
+function infoWindow(i) {
+  if (!infoWindows[i]) {
+    var contentString = '<div id="content">' +
+        gon.events[i] +
+        '</div>';
+    infoWindows[i] = new google.maps.InfoWindow({
+        content: contentString
+    });
+  }
+  return infoWindows[i];
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
