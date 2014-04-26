@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     end
 
     # pages directory scrapes from http://www.mysocialist.com/concerts
-    doc_string = Nokogiri::HTML(open("./pages/mysocialist.txt"))
+    doc_string = Nokogiri::HTML(open("./pages/mySocialist.txt"))
     @sections = doc_string.css(".listingRow")
     @date = 0
     if !params[:date].nil?
