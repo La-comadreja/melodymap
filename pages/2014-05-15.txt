@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta name="google-site-verification" content="JC7bo46qdEm14tQF9x5-jNXwDvIJclk94aUYiPuMfTE" />
+	<meta name="google-site-verification" content="fJcwprEmEJI3xfJvUnNYkUZQxrV9OoXq398L1eGdh9Y" />
+	<meta name="apple-itunes-app" content="app-id=515603221">
+	<meta name="description" content="Find the most buzzed about, upcoming indie shows in New York for 2014." />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var f=0;f<d.length;f++)e(d[f]);return e}({"4O2Y62":[function(a,b){function c(a,b){var c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],handle:[function(a,b){b.exports=a("4O2Y62")},{}],YLUGVp:[function(a,b){function c(){var a=m.info=NREUM.info;if(a&&a.agent&&a.licenseKey&&a.applicationID){m.proto="https"===l.split(":")[0]||a.sslForHttp?"https://":"http://",g("mark",["onload",f()]);var b=i.createElement("script");b.src=m.proto+a.agent,i.body.appendChild(b)}}function d(){"complete"===i.readyState&&e()}function e(){g("mark",["domContent",f()])}function f(){return(new Date).getTime()}var g=a("handle"),h=window,i=h.document,j="addEventListener",k="attachEvent",l=(""+location).split("?")[0],m=b.exports={offset:f(),origin:l,features:[]};i[j]?(i[j]("DOMContentLoaded",e,!1),h[j]("load",c,!1)):(i[k]("onreadystatechange",d),h[k]("onload",c)),g("mark",["firstbyte",f()])},{handle:"4O2Y62"}],loader:[function(a,b){b.exports=a("YLUGVp")},{}]},{},["YLUGVp"]);</script>
+<meta http-equiv="Content-Language" content="en-US" /><title>New York Concert Calendar 2014</title><link href="/images/favicon.ico" rel="favicon" />
+<link href="/public/fancybox/fancy.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/public/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/min/?g=css&amp;v=9" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/min/?g=js&amp;v=6"></script>
+<script type="text/javascript">$(document).ready(function() {
+ var search_options = { width: 200, 
+ 						onSelect: function(value, data) { $('#nav-search-manual-boolean').val('1'); }, 
+ 						delimiter: /(,|;)\s*/,
+ 						//serviceUrl: '/ajax/searchlist'};
+ 						 
+ 						lookup: ''.split(',') };
+ var a;
+ //a = $('#nav-search').autocomplete(search_options);
+ $('#nav-search').bind('input', function(value, data) { $('#nav-search-manual-boolean').val('0'); });
+ });</script>    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="/public/ie.css" media="screen" />
+    <![endif]-->
+</head>
+<body>
+<script>
+var msl_signedIn = false;
+var lastfmid = "";
+function toggleLoginScreen(showhide) {
+	
+	$('#headerScreen').toggle(showhide);
+	$('#headerScreenLoginBox').toggle(showhide);
+}
+
+
+function mslSignIn(email, password) {
+	$.ajax({
+		url: "/ajax/signin",
+	  	cache: false,
+	  	data: 'email='+email+'&password='+password,
+	  	type: "POST",
+	  	dataType: "json",
+	  	error: function(XMLHttpRequest, textStatus, errorThrown){
+			alert("Whoops\n\nThere was a network error. Please try again in a few moments.");
+		},
+		success: function(data, textStatus, xhr ){
+			if (data.success) {
+				document.location.href = '/mylist';
+			} else {
+				alert('Invalid email/password.  Please try again.');
+			} 
+		}
+	});
+}
+</script>
+<div id="headerScreen"></div>
+
+<div id="header">
+
+	<div id="header-login-options" style="float:right;">
+	<div id="header_login_expand"><div><span onclick="toggleLoginScreen();event.stopPropagation();">LOG IN</span> <i>&nbsp;&nbsp;or&nbsp;&nbsp;</i> <a href="/register" id="header_login_register">REGISTER</a></div></div>	</div>
+	<form id="site-main-search-form" method="get" action="/search">
+		<input type="hidden" name="st" id="st" value="both" />
+		<input type="hidden" name="search"  value="1" />
+		<div style="float:right;position:relative;">
+			<div onclick="executeMainSearch();" id="nav-search-icon"></div>
+			<input id="nav-search" type="text" name="keywords" value="Search Shows" onfocus="clearInput(this,'Search Shows')" />
+			<input id="nav-search-manual-boolean" name="exact" type="hidden" value="0" />
+			<div class="clear"></div>
+		</div>
+	</form>
+	
+	<div id="headerScreenLoginBox">
+		<label for="login_email_input">Email:</label> <p style="float:right;padding:0;"><a style="color:#23a7d2;text-decoration:none;" href="/account/forgotpassword">Forgot password?</a></p>
+		<input id="login_email_input" type="text" />
+		<label for="login_password_input">Password:</label>
+		<input id="login_password_input" type="password" />
+		
+		<a style="width: 100%; padding: 14px 0px; border 1px solid #e2445d;" onclick="mslSignIn($('#login_email_input').val(), $('#login_password_input').val())" class="msl_button msl_button_medium msl_button_pink">Sign in</a>
+		<a style="width: 100%; padding: 14px 0px; background: #3c5a98; position: relative;" class="msl_button msl_button_large" onclick="requireFbgSession(signinWithFBAccessToken, gotoMyList)"><div class="small-facebook-jumplink-white" style="position:absolute;top: 7px; left: 14px; padding-right: 12px;"></div><span>Sign in with Facebook</span></a>
+		
+	</div>
+	<a href="/"><span class="msl_logo"></span></a>
+
+  <div class='clear'></div>
+	
+</div>
+
+
+
+<div id="sub-header">
+
+
+
+	<div style="width:92px;" class="topLink "><a class="navLink" href="/blog">blog</a></div><div style="width:123px;" class="topLink selected"><a class="navLink" href="/concerts">tonight</a></div><div style="width:92px;" class="topLink "><a class="navLink" href="/concerts/free">free</a></div><div style="width:185px;" class="topLink "><a class="navLink" href="/concerts/going-on-sale">going on sale</a></div><div style="width:195px;" class="topLink "><a class="navLink" href="/concerts/just-announced">just announced</a></div><div style="width:134px;" class="topLink "><a class="navLink" href="/concerts/allages">All Ages</a></div>	<div id="when-container" class="topLink" style="width:17.5258%">
+		<form action="/search" method="get" id="dateSearchForm">
+		<input type="hidden" name="search" id="search" value="1" />
+		<span id="searchCalendarIcon" class="when-search-rer">
+			<a id="searchCalendarIconAction" class="navLink" href="javascript: showDatePicker()">
+				choose dates
+			</a>
+		</span>
+		<div id="searchCalendarArrowIcon" style="display: inline;left: 96px;min-height: 20px;position: absolute;top: 0px;width: 18px;cursor:pointer;z-index:10;">&nbsp;</div>
+		
+		<div id="when-datepicker-box">
+
+			<input id="when" type="hidden" maxlength="13" name="when" value="" onfocus="clearInput(this,'')" />
+			<div id="when-datepicker-top"></div>
+			<div id="when-datepicker-body"></div>
+			<div id="when-datepicker-bottom"></div>
+		</div>
+		<div class="clear"></div>
+		</form>
+	</div>
+	<style>.topLink { width: 97%; }</style><div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+      
+<div class="wrapper">
+<div id="msl-content" class="wrapped">
+	
+<div class="clear"></div>
+<div id="listingTopNav">
+			<h1 class="listingTitle">New York concert calendar 2014</h1>
+			<div class="listingSubtitle"><p>Our concert calendar tracks the most anticipated New York indie shows and concerts for 2013. Get ready.</p></div>
+		<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="colmask">
+    <div class="colleft">
+        <div class="col1wrap">
+            <div class="col1">
+                <!-- Column 1 start -->
+                
+                <div class="clear"></div>
+                
+                <div class="full-table">
+<table>
+
+<tr class="listingHeaderRow"><th class="listingBuzz"><p>Buzz</p></th><th class="listingDate"><p>Date / Time</p></th><th class="listingPic"></th><th class="listingArtist"><p>Artist</p></th><th class="listingVenue"><p><a href="/venues">Venue</a> / <a href="/hood">Hood</a></p></th><th class="listingPrice"></th></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/25783/Psychemagik%2CJoakim%2CJDH+%26+Dave+P%2CFixed+at+%28le%29+poisson+rouge+on+15+May+2014">5/15<br/>11:00 PM</a></p></td><td class="listingPic"><a href="/event/25783/Psychemagik%2CJoakim%2CJDH+%26+Dave+P%2CFixed+at+%28le%29+poisson+rouge+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=521fd872d94db.jpg&s=quarter" /></a></td><td class="listingArtist"><p class="artist party-artist"><a href="/event/25783/Psychemagik%2CJoakim%2CJDH+%26+Dave+P%2CFixed+at+%28le%29+poisson+rouge+on+15+May+2014">Fixed</a></p><p><span class='artist'><a href='/event/25783/Psychemagik%2CJoakim%2CJDH+%26+Dave+P%2CFixed+at+%28le%29+poisson+rouge+on+15+May+2014' >Psychemagik, Joakim, JDH & Dave P<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/%28le%29+poisson+rouge">(le) poisson rouge</a></p><p class="listingNeighborhood">West Village</p></td><td class="listingPrice"><p><a href="/event/25783/Psychemagik%2CJoakim%2CJDH+%26+Dave+P%2CFixed+at+%28le%29+poisson+rouge+on+15+May+2014">$10</a></p><button class="event-btn-25783 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25783, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">3<span></span></p></td><td class="listingDate"><p><a href="/event/25118/Mastodon%2CGojira%2CKvelertak+at+Terminal+5+on+15+May+2014">5/15<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25118/Mastodon%2CGojira%2CKvelertak+at+Terminal+5+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52118b750804a.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25118/Mastodon%2CGojira%2CKvelertak+at+Terminal+5+on+15+May+2014' >Mastodon, Gojira, Kvelertak<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Terminal+5">Terminal 5</a></p><p class="listingNeighborhood">Midtown</p></td><td class="listingPrice"><p><a href="/event/25118/Mastodon%2CGojira%2CKvelertak+at+Terminal+5+on+15+May+2014">$25</a></p><button class="event-btn-25118 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25118, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">4<span></span></p></td><td class="listingDate"><p><a href="/event/25506/The+Afghan+Whigs+at+Brooklyn+Bowl+on+15+May+2014">5/15<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25506/The+Afghan+Whigs+at+Brooklyn+Bowl+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52226267ab8a0.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25506/The+Afghan+Whigs+at+Brooklyn+Bowl+on+15+May+2014' >The Afghan Whigs<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Brooklyn+Bowl">Brooklyn Bowl</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25506/The+Afghan+Whigs+at+Brooklyn+Bowl+on+15+May+2014">$40</a></p><button class="event-btn-25506 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25506, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">5<span></span></p></td><td class="listingDate"><p><a href="/event/25308/The+Underachievers%2CDenzel+Curry%2CDillon+Cooper+at+Irving+Plaza+on+15+May+2014">5/15<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25308/The+Underachievers%2CDenzel+Curry%2CDillon+Cooper+at+Irving+Plaza+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5222d90e36a6d.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25308/The+Underachievers%2CDenzel+Curry%2CDillon+Cooper+at+Irving+Plaza+on+15+May+2014' >The Underachievers, Denzel Curry, Dillon Cooper<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Irving+Plaza">Irving Plaza</a></p><p class="listingNeighborhood">Union Square</p></td><td class="listingPrice"><p><a href="/event/25308/The+Underachievers%2CDenzel+Curry%2CDillon+Cooper+at+Irving+Plaza+on+15+May+2014">$17</a></p><button class="event-btn-25308 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25308, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">6<span></span></p></td><td class="listingDate"><p><a href="/event/24057/Tokyo+Police+Club+at+Webster+Hall+on+15+May+2014">5/15<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/24057/Tokyo+Police+Club+at+Webster+Hall+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5223a39fbbbb3.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24057/Tokyo+Police+Club+at+Webster+Hall+on+15+May+2014' >Tokyo Police Club<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Webster+Hall">Webster Hall</a></p><p class="listingNeighborhood">East Village</p></td><td class="listingPrice"><p><a href="/event/24057/Tokyo+Police+Club+at+Webster+Hall+on+15+May+2014">$25</a></p><button class="event-btn-24057 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24057, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">7<span></span></p></td><td class="listingDate"><p><a href="/event/25690/Questlove+at+Brooklyn+Bowl+on+15+May+2014">5/15<br/>10:30 PM</a></p></td><td class="listingPic"><a href="/event/25690/Questlove+at+Brooklyn+Bowl+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=530ffe86160b7.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25690/Questlove+at+Brooklyn+Bowl+on+15+May+2014' >Questlove DJ set<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Brooklyn+Bowl">Brooklyn Bowl</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25690/Questlove+at+Brooklyn+Bowl+on+15+May+2014">$5</a></p><button class="event-btn-25690 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25690, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">8<span></span></p></td><td class="listingDate"><p><a href="/event/26049/Eleven+Pond%2CKlaus%2CThe+Harrow+at+Glasslands+Gallery+on+15+May+2014">5/15<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/26049/Eleven+Pond%2CKlaus%2CThe+Harrow+at+Glasslands+Gallery+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d42d8694fd8.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/26049/Eleven+Pond%2CKlaus%2CThe+Harrow+at+Glasslands+Gallery+on+15+May+2014' >Eleven Pond, Klaus, The Harrow<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Glasslands+Gallery">Glasslands Gallery</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/26049/Eleven+Pond%2CKlaus%2CThe+Harrow+at+Glasslands+Gallery+on+15+May+2014">$10</a></p><button class="event-btn-26049 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 26049, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25784/Blood+Red+Shoes+at+The+Mercury+Lounge+on+15+May+2014">5/15<br/>6:30 PM</a></p></td><td class="listingPic"><a href="/event/25784/Blood+Red+Shoes+at+The+Mercury+Lounge+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51c88b082a366.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25784/Blood+Red+Shoes+at+The+Mercury+Lounge+on+15+May+2014' >Blood Red Shoes<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Mercury+Lounge">The Mercury Lounge</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25784/Blood+Red+Shoes+at+The+Mercury+Lounge+on+15+May+2014">$13</a></p><button class="event-btn-25784 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25784, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25218/Chad+Vangaalen+at+The+Bell+House+on+15+May+2014">5/15<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25218/Chad+Vangaalen+at+The+Bell+House+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d0b099446dc.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25218/Chad+Vangaalen+at+The+Bell+House+on+15+May+2014' >Chad Vangaalen<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Bell+House">The Bell House</a></p><p class="listingNeighborhood">Gowanus</p></td><td class="listingPrice"><p><a href="/event/25218/Chad+Vangaalen+at+The+Bell+House+on+15+May+2014">$12</a></p><button class="event-btn-25218 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25218, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25262/The+Wild+Feathers%2CBuffalo+Clover+at+Bowery+Ballroom+on+15+May+2014">5/15<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25262/The+Wild+Feathers%2CBuffalo+Clover+at+Bowery+Ballroom+on+15+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52b103644c9ea.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25262/The+Wild+Feathers%2CBuffalo+Clover+at+Bowery+Ballroom+on+15+May+2014' >The Wild Feathers, Buffalo Clover<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25262/The+Wild+Feathers%2CBuffalo+Clover+at+Bowery+Ballroom+on+15+May+2014">$17</a></p><button class="event-btn-25262 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25262, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowBuzzBlock'><td class="listingBuzz"><p class="movement">1<span></span></p></td><td class="listingDate"><p><a href="/event/24645/Woods%2CQuilt+at+Bowery+Ballroom+on+16+May+2014">5/16<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/24645/Woods%2CQuilt+at+Bowery+Ballroom+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=522477257e7d8.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24645/Woods%2CQuilt+at+Bowery+Ballroom+on+16+May+2014' >Woods, Quilt<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/24645/Woods%2CQuilt+at+Bowery+Ballroom+on+16+May+2014">$12</a></p><button class="event-btn-24645 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24645, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/24447/Chromeo%2COliver+at+Terminal+5+on+16+May+2014">5/16<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/24447/Chromeo%2COliver+at+Terminal+5+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d0d1bc2443e.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24447/Chromeo%2COliver+at+Terminal+5+on+16+May+2014' >Chromeo, Oliver<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Terminal+5">Terminal 5</a></p><p class="listingNeighborhood">Midtown</p></td><td class="listingPrice"><p><a href="/event/24447/Chromeo%2COliver+at+Terminal+5+on+16+May+2014">SOLD OUT</a></p><button class="event-btn-24447 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24447, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">3<span></span></p></td><td class="listingDate"><p><a href="/event/26276/Clear+Plastic+Masks+at+Rough+Trade+on+16+May+2014">5/16<br/>10:30 PM</a></p></td><td class="listingPic"><a href="/event/26276/Clear+Plastic+Masks+at+Rough+Trade+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d0d77f1965c.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/26276/Clear+Plastic+Masks+at+Rough+Trade+on+16+May+2014' >Clear Plastic Masks<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Rough+Trade">Rough Trade</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/26276/Clear+Plastic+Masks+at+Rough+Trade+on+16+May+2014">$10</a></p><button class="event-btn-26276 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 26276, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">4<span></span></p></td><td class="listingDate"><p><a href="/event/25832/Tim+Hecker%2CNapalm+Death%2CGunplay%2CThe+Thing%2CWolf+Eyes%2CRegis%2CBastard+Noise%2CLumbomyr+Melnyk%2CSkullflower%2CJoe+McPhee%2COkkyung+Lee%2CClipping%2CYoshiko+Ohara%2CReg+Bloor%2CGnaw%2CRed+Bull+Music+Academy+at+Knockdown+Center+on+16+May+2014">5/16<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25832/Tim+Hecker%2CNapalm+Death%2CGunplay%2CThe+Thing%2CWolf+Eyes%2CRegis%2CBastard+Noise%2CLumbomyr+Melnyk%2CSkullflower%2CJoe+McPhee%2COkkyung+Lee%2CClipping%2CYoshiko+Ohara%2CReg+Bloor%2CGnaw%2CRed+Bull+Music+Academy+at+Knockdown+Center+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52239d4b91724.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25832/Tim+Hecker%2CNapalm+Death%2CGunplay%2CThe+Thing%2CWolf+Eyes%2CRegis%2CBastard+Noise%2CLumbomyr+Melnyk%2CSkullflower%2CJoe+McPhee%2COkkyung+Lee%2CClipping%2CYoshiko+Ohara%2CReg+Bloor%2CGnaw%2CRed+Bull+Music+Academy+at+Knockdown+Center+on+16+May+2014' >Tim Hecker, Napalm Death, Gunplay, The Thing, Wolf Eyes, Regis, Bastard Noise, Lumbomyr Melnyk, Skullflower, Joe McPhee, Okkyung Lee, Clipping...<br/></a></span></p></td><td class="listingVenue"><p class="artist festival-artist"><a href="/festival/Red+Bull+Music+Academy">Red Bull Music Academy</a></p><p class="listingLocation"><a href="/venues/Knockdown+Center">Knockdown Center</a></p><p class="listingNeighborhood">Ridgewood</p></td><td class="listingPrice"><p><a href="/event/25832/Tim+Hecker%2CNapalm+Death%2CGunplay%2CThe+Thing%2CWolf+Eyes%2CRegis%2CBastard+Noise%2CLumbomyr+Melnyk%2CSkullflower%2CJoe+McPhee%2COkkyung+Lee%2CClipping%2CYoshiko+Ohara%2CReg+Bloor%2CGnaw%2CRed+Bull+Music+Academy+at+Knockdown+Center+on+16+May+2014">$10</a></p><button class="event-btn-25832 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25832, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">5<span></span></p></td><td class="listingDate"><p><a href="/event/25342/Elbow%2CJohn+Grant+at+Webster+Hall+on+16+May+2014">5/16<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25342/Elbow%2CJohn+Grant+at+Webster+Hall+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d345bd01cd2.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25342/Elbow%2CJohn+Grant+at+Webster+Hall+on+16+May+2014' >Elbow, John Grant<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Webster+Hall">Webster Hall</a></p><p class="listingNeighborhood">East Village</p></td><td class="listingPrice"><p><a href="/event/25342/Elbow%2CJohn+Grant+at+Webster+Hall+on+16+May+2014">$45</a></p><button class="event-btn-25342 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25342, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">6<span></span></p></td><td class="listingDate"><p><a href="/event/25935/Seahaven%2CAdventures%2CFoxing%2CLittle+Big+League+at+The+Studio+%40+Webster+Hall+on+16+May+2014">5/16<br/>6:30 PM</a></p></td><td class="listingPic"><a href="/event/25935/Seahaven%2CAdventures%2CFoxing%2CLittle+Big+League+at+The+Studio+%40+Webster+Hall+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=531e678fad1f0.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25935/Seahaven%2CAdventures%2CFoxing%2CLittle+Big+League+at+The+Studio+%40+Webster+Hall+on+16+May+2014' >Seahaven, Adventures, Foxing, Little Big League<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Studio+%40+Webster+Hall">The Studio @ Webster Hall</a></p><p class="listingNeighborhood">East Village</p></td><td class="listingPrice"><p><a href="/event/25935/Seahaven%2CAdventures%2CFoxing%2CLittle+Big+League+at+The+Studio+%40+Webster+Hall+on+16+May+2014">$12</a></p><button class="event-btn-25935 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25935, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">7<span></span></p></td><td class="listingDate"><p><a href="/event/26187/Screaming+Females%2CMarvin+Berry+and+The+New+Sound%2CBrooklyn+Night+Bazaar+at+Brooklyn+Night+Bazaar+on+16+May+2014">5/16<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/26187/Screaming+Females%2CMarvin+Berry+and+The+New+Sound%2CBrooklyn+Night+Bazaar+at+Brooklyn+Night+Bazaar+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52204580c04ca.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/26187/Screaming+Females%2CMarvin+Berry+and+The+New+Sound%2CBrooklyn+Night+Bazaar+at+Brooklyn+Night+Bazaar+on+16+May+2014' >Screaming Females, Marvin Berry and The New Sound<br/></a></span></p></td><td class="listingVenue"><p class="artist festival-artist"><a href="/festival/Brooklyn+Night+Bazaar">Brooklyn Night Bazaar</a></p><p class="listingLocation"><a href="/venues/Brooklyn+Night+Bazaar">Brooklyn Night Bazaar</a></p><p class="listingNeighborhood">Greenpoint</p></td><td class="listingPrice"><p><a href="/event/26187/Screaming+Females%2CMarvin+Berry+and+The+New+Sound%2CBrooklyn+Night+Bazaar+at+Brooklyn+Night+Bazaar+on+16+May+2014">FREE!</a></p><button class="event-btn-26187 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 26187, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">8<span></span></p></td><td class="listingDate"><p><a href="/event/24283/Breton%2CKid+Karate%2CHoodlem+at+Glasslands+Gallery+on+16+May+2014">5/16<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/24283/Breton%2CKid+Karate%2CHoodlem+at+Glasslands+Gallery+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51c8feaa322e4.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24283/Breton%2CKid+Karate%2CHoodlem+at+Glasslands+Gallery+on+16+May+2014' >Breton, Kid Karate, Hoodlem<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Glasslands+Gallery">Glasslands Gallery</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/24283/Breton%2CKid+Karate%2CHoodlem+at+Glasslands+Gallery+on+16+May+2014">$12</a></p><button class="event-btn-24283 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24283, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">9<span></span></p></td><td class="listingDate"><p><a href="/event/25378/Augustana%2CTwin+Forks+at+Irving+Plaza+on+16+May+2014">5/16<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25378/Augustana%2CTwin+Forks+at+Irving+Plaza+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51c0fe5e88640.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25378/Augustana%2CTwin+Forks+at+Irving+Plaza+on+16+May+2014' >Augustana, Twin Forks<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Irving+Plaza">Irving Plaza</a></p><p class="listingNeighborhood">Union Square</p></td><td class="listingPrice"><p><a href="/event/25378/Augustana%2CTwin+Forks+at+Irving+Plaza+on+16+May+2014">$19.5</a></p><button class="event-btn-25378 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25378, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25821/Dumpstaphunk%2CSpin+Doctors+at+Brooklyn+Bowl+on+16+May+2014">5/16<br/>6:00 PM</a></p></td><td class="listingPic"><a href="/event/25821/Dumpstaphunk%2CSpin+Doctors+at+Brooklyn+Bowl+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5233444fea2d2.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25821/Dumpstaphunk%2CSpin+Doctors+at+Brooklyn+Bowl+on+16+May+2014' >Dumpstaphunk, Spin Doctors<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Brooklyn+Bowl">Brooklyn Bowl</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25821/Dumpstaphunk%2CSpin+Doctors+at+Brooklyn+Bowl+on+16+May+2014">$20</a></p><button class="event-btn-25821 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25821, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25078/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+16+May+2014">5/16<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25078/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d1cce8bd8b7.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25078/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+16+May+2014' >Dark Star Orchestra<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Capitol+Theatre">The Capitol Theatre</a></p><p class="listingNeighborhood">Port Chester</p></td><td class="listingPrice"><p><a href="/event/25078/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+16+May+2014">$35</a></p><button class="event-btn-25078 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25078, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25804/Morcheeba+at+The+Warsaw+on+16+May+2014">5/16<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25804/Morcheeba+at+The+Warsaw+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5316947aacd25.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25804/Morcheeba+at+The+Warsaw+on+16+May+2014' >Morcheeba<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Warsaw">The Warsaw</a></p><p class="listingNeighborhood">Greenpoint</p></td><td class="listingPrice"><p><a href="/event/25804/Morcheeba+at+The+Warsaw+on+16+May+2014">TBD</a></p><button class="event-btn-25804 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25804, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25201/The+Lillingtons%2CStabbed+in+Back+at+Knitting+Factory+on+16+May+2014">5/16<br/>7:30 PM</a></p></td><td class="listingPic"><a href="/event/25201/The+Lillingtons%2CStabbed+in+Back+at+Knitting+Factory+on+16+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52f39cfee2b8f.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25201/The+Lillingtons%2CStabbed+in+Back+at+Knitting+Factory+on+16+May+2014' >The Lillingtons, Stabbed in Back<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Knitting+Factory">Knitting Factory</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25201/The+Lillingtons%2CStabbed+in+Back+at+Knitting+Factory+on+16+May+2014">$15</a></p><button class="event-btn-25201 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25201, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowBuzzBlock listingRowOdd'><td class="listingBuzz"><p class="movement">1<span></span></p></td><td class="listingDate"><p><a href="/event/24959/Ghost+B.C.%2CKing+Dude+at+Best+Buy+Theater+on+17+May+2014">5/17<br/>8:30 PM</a></p></td><td class="listingPic"><a href="/event/24959/Ghost+B.C.%2CKing+Dude+at+Best+Buy+Theater+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51dd6bdf477e2.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24959/Ghost+B.C.%2CKing+Dude+at+Best+Buy+Theater+on+17+May+2014' >Ghost B.C., King Dude<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Best+Buy+Theater">Best Buy Theater</a></p><p class="listingNeighborhood">Midtown</p></td><td class="listingPrice"><p><a href="/event/24959/Ghost+B.C.%2CKing+Dude+at+Best+Buy+Theater+on+17+May+2014">$25</a></p><button class="event-btn-24959 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24959, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/25313/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+17+May+2014">5/17<br/>7:30 PM</a></p></td><td class="listingPic"><a href="/event/25313/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51cf098dea5ab.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25313/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+17+May+2014' >Bruce Springsteen and the E Street Band<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Mohegan+Sun+Arena">Mohegan Sun Arena</a></p><p class="listingNeighborhood">Uncasville</p></td><td class="listingPrice"><p><a href="/event/25313/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+17+May+2014">$98</a></p><button class="event-btn-25313 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25313, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">3<span></span></p></td><td class="listingDate"><p><a href="/event/24561/Chromeo%2COliver+at+Terminal+5+on+17+May+2014">5/17<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/24561/Chromeo%2COliver+at+Terminal+5+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d0d1bc2443e.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24561/Chromeo%2COliver+at+Terminal+5+on+17+May+2014' >Chromeo, Oliver<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Terminal+5">Terminal 5</a></p><p class="listingNeighborhood">Midtown</p></td><td class="listingPrice"><p><a href="/event/24561/Chromeo%2COliver+at+Terminal+5+on+17+May+2014">$25</a></p><button class="event-btn-24561 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24561, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">4<span></span></p></td><td class="listingDate"><p><a href="/event/25338/Off%21%2CCerebral+Ballzy%2CNasa+Space+Universe+at+Bowery+Ballroom+on+17+May+2014">5/17<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25338/Off%21%2CCerebral+Ballzy%2CNasa+Space+Universe+at+Bowery+Ballroom+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=521f178e76ca7.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25338/Off%21%2CCerebral+Ballzy%2CNasa+Space+Universe+at+Bowery+Ballroom+on+17+May+2014' >Off!, Cerebral Ballzy, Nasa Space Universe<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25338/Off%21%2CCerebral+Ballzy%2CNasa+Space+Universe+at+Bowery+Ballroom+on+17+May+2014">$15</a></p><button class="event-btn-25338 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25338, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">5<span></span></p></td><td class="listingDate"><p><a href="/event/25327/Chet+Faker+at+Music+Hall+of+Williamsburg+on+17+May+2014">5/17<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25327/Chet+Faker+at+Music+Hall+of+Williamsburg+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=526d9c38cda72.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25327/Chet+Faker+at+Music+Hall+of+Williamsburg+on+17+May+2014' >Chet Faker<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Music+Hall+of+Williamsburg">Music Hall of Williamsburg</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25327/Chet+Faker+at+Music+Hall+of+Williamsburg+on+17+May+2014">$16</a></p><button class="event-btn-25327 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25327, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">6<span></span></p></td><td class="listingDate"><p><a href="/event/25622/The+Faint+at+Webster+Hall+on+17+May+2014">5/17<br/>6:30 PM</a></p></td><td class="listingPic"><a href="/event/25622/The+Faint+at+Webster+Hall+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=522287e87a376.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25622/The+Faint+at+Webster+Hall+on+17+May+2014' >The Faint<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Webster+Hall">Webster Hall</a></p><p class="listingNeighborhood">East Village</p></td><td class="listingPrice"><p><a href="/event/25622/The+Faint+at+Webster+Hall+on+17+May+2014">$25</a></p><button class="event-btn-25622 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25622, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">7<span></span></p></td><td class="listingDate"><p><a href="/event/25833/Gerd+Janson%2CRed+Bull+Music+Academy+at+Secret+Brooklyn+Venue+on+17+May+2014">5/17<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25833/Gerd+Janson%2CRed+Bull+Music+Academy+at+Secret+Brooklyn+Venue+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5318b019bf0df.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25833/Gerd+Janson%2CRed+Bull+Music+Academy+at+Secret+Brooklyn+Venue+on+17+May+2014' >Gerd Janson<br/></a></span></p></td><td class="listingVenue"><p class="artist festival-artist"><a href="/festival/Red+Bull+Music+Academy">Red Bull Music Academy</a></p><p class="listingLocation"><a href="/venues/Secret+Brooklyn+Venue">Secret Brooklyn Venue</a></p><p class="listingNeighborhood">Unknown</p></td><td class="listingPrice"><p><a href="/event/25833/Gerd+Janson%2CRed+Bull+Music+Academy+at+Secret+Brooklyn+Venue+on+17+May+2014">FREE!</a></p><button class="event-btn-25833 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25833, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">8<span></span></p></td><td class="listingDate"><p><a href="/event/25597/Midtown%2CSaosin%2CAnthony+Green%2CThe+Early+November%2CSecret+Band%2CEmmure%2CUpon+a+Burning+Body%2CLike+Moths+to+Flames%2CNGHBRS%2CBasic+Vacation%2CYouth+in+Revolt%2CChasing+Safety%2CBrick+%2B+Mortar%2CGift+Giver%2CSomewhere+in+Time%2CSylar%2CSirens+%26+Sailors%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+17+May+2014">5/17<br/>12:00 PM</a></p></td><td class="listingPic"><a href="/event/25597/Midtown%2CSaosin%2CAnthony+Green%2CThe+Early+November%2CSecret+Band%2CEmmure%2CUpon+a+Burning+Body%2CLike+Moths+to+Flames%2CNGHBRS%2CBasic+Vacation%2CYouth+in+Revolt%2CChasing+Safety%2CBrick+%2B+Mortar%2CGift+Giver%2CSomewhere+in+Time%2CSylar%2CSirens+%26+Sailors%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=530a572e95a7a.jpg&s=quarter" /></a></td><td class="listingArtist"><p class="artist party-artist"><a href="/event/25597/Midtown%2CSaosin%2CAnthony+Green%2CThe+Early+November%2CSecret+Band%2CEmmure%2CUpon+a+Burning+Body%2CLike+Moths+to+Flames%2CNGHBRS%2CBasic+Vacation%2CYouth+in+Revolt%2CChasing+Safety%2CBrick+%2B+Mortar%2CGift+Giver%2CSomewhere+in+Time%2CSylar%2CSirens+%26+Sailors%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+17+May+2014">Skate and Surf Festival</a></p><p><span class='artist'><a href='/event/25597/Midtown%2CSaosin%2CAnthony+Green%2CThe+Early+November%2CSecret+Band%2CEmmure%2CUpon+a+Burning+Body%2CLike+Moths+to+Flames%2CNGHBRS%2CBasic+Vacation%2CYouth+in+Revolt%2CChasing+Safety%2CBrick+%2B+Mortar%2CGift+Giver%2CSomewhere+in+Time%2CSylar%2CSirens+%26+Sailors%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+17+May+2014' >Midtown, Saosin, Anthony Green, The Early November, Secret Band, Emmure, Upon a Burning Body, Like Moths to Flames, NGHBRS, Basic Vacation...<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Middletown+Sports+Complex">Middletown Sports Complex</a></p><p class="listingNeighborhood">Dirty Jersey</p></td><td class="listingPrice"><p><a href="/event/25597/Midtown%2CSaosin%2CAnthony+Green%2CThe+Early+November%2CSecret+Band%2CEmmure%2CUpon+a+Burning+Body%2CLike+Moths+to+Flames%2CNGHBRS%2CBasic+Vacation%2CYouth+in+Revolt%2CChasing+Safety%2CBrick+%2B+Mortar%2CGift+Giver%2CSomewhere+in+Time%2CSylar%2CSirens+%26+Sailors%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+17+May+2014">$104.99</a></p><button class="event-btn-25597 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25597, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">9<span></span></p></td><td class="listingDate"><p><a href="/event/25805/Built+To+Spill+at+Stone+Pony+on+17+May+2014">5/17<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25805/Built+To+Spill+at+Stone+Pony+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51cf0eeab5961.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25805/Built+To+Spill+at+Stone+Pony+on+17+May+2014' >Built To Spill<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Stone+Pony">Stone Pony</a></p><p class="listingNeighborhood">Asbury Park</p></td><td class="listingPrice"><p><a href="/event/25805/Built+To+Spill+at+Stone+Pony+on+17+May+2014">$18</a></p><button class="event-btn-25805 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25805, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25079/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+17+May+2014">5/17<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25079/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51d1cce8bd8b7.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25079/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+17+May+2014' >Dark Star Orchestra<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Capitol+Theatre">The Capitol Theatre</a></p><p class="listingNeighborhood">Port Chester</p></td><td class="listingPrice"><p><a href="/event/25079/Dark+Star+Orchestra+at+The+Capitol+Theatre+on+17+May+2014">$35</a></p><button class="event-btn-25079 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25079, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25810/Morcheeba+at+Irving+Plaza+on+17+May+2014">5/17<br/>7:00 PM</a></p></td><td class="listingPic"><a href="/event/25810/Morcheeba+at+Irving+Plaza+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5316947aacd25.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25810/Morcheeba+at+Irving+Plaza+on+17+May+2014' >Morcheeba<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Irving+Plaza">Irving Plaza</a></p><p class="listingNeighborhood">Union Square</p></td><td class="listingPrice"><p><a href="/event/25810/Morcheeba+at+Irving+Plaza+on+17+May+2014">$30</a></p><button class="event-btn-25810 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25810, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/26141/Justin+Currie+at+Rough+Trade+on+17+May+2014">5/17<br/>7:30 PM</a></p></td><td class="listingPic"><a href="/event/26141/Justin+Currie+at+Rough+Trade+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=53076b49ea052.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/26141/Justin+Currie+at+Rough+Trade+on+17+May+2014' >Justin Currie<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Rough+Trade">Rough Trade</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/26141/Justin+Currie+at+Rough+Trade+on+17+May+2014">$25</a></p><button class="event-btn-26141 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 26141, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/24846/Peelander-Z%2CMath+the+Band%2CBluejay+at+Glasslands+Gallery+on+17+May+2014">5/17<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/24846/Peelander-Z%2CMath+the+Band%2CBluejay+at+Glasslands+Gallery+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=521fc6ff80ab8.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/24846/Peelander-Z%2CMath+the+Band%2CBluejay+at+Glasslands+Gallery+on+17+May+2014' >Peelander-Z, Math the Band, Bluejay<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Glasslands+Gallery">Glasslands Gallery</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/24846/Peelander-Z%2CMath+the+Band%2CBluejay+at+Glasslands+Gallery+on+17+May+2014">$12</a></p><button class="event-btn-24846 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 24846, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25616/Little+Hurricane+at+The+Mercury+Lounge+on+17+May+2014">5/17<br/>10:30 PM</a></p></td><td class="listingPic"><a href="/event/25616/Little+Hurricane+at+The+Mercury+Lounge+on+17+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=530cb6e91d4ce.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25616/Little+Hurricane+at+The+Mercury+Lounge+on+17+May+2014' >Little Hurricane<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Mercury+Lounge">The Mercury Lounge</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25616/Little+Hurricane+at+The+Mercury+Lounge+on+17+May+2014">$12</a></p><button class="event-btn-25616 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25616, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowBuzzBlock listingRowOdd'><td class="listingBuzz"><p class="movement">1<span></span></p></td><td class="listingDate"><p><a href="/event/25314/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+18+May+2014">5/18<br/>7:30 PM</a></p></td><td class="listingPic"><a href="/event/25314/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+18+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51cf098dea5ab.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25314/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+18+May+2014' >Bruce Springsteen and the E Street Band<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Mohegan+Sun+Arena">Mohegan Sun Arena</a></p><p class="listingNeighborhood">Uncasville</p></td><td class="listingPrice"><p><a href="/event/25314/Bruce+Springsteen+and+the+E+Street+Band+at+Mohegan+Sun+Arena+on+18+May+2014">$98</a></p><button class="event-btn-25314 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25314, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/25332/Swans%2CJenny+Hval+at+Bowery+Ballroom+on+18+May+2014">5/18<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25332/Swans%2CJenny+Hval+at+Bowery+Ballroom+on+18+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=522161663d50a.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25332/Swans%2CJenny+Hval+at+Bowery+Ballroom+on+18+May+2014' >Swans, Jenny Hval<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25332/Swans%2CJenny+Hval+at+Bowery+Ballroom+on+18+May+2014">$35</a></p><button class="event-btn-25332 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25332, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">3<span></span></p></td><td class="listingDate"><p><a href="/event/25822/Panda+Bear%2CDam-Funk%2CWordless+Music+%26+RBMA+Presents%2CRed+Bull+Music+Academy+at+The+Warsaw+on+18+May+2014">5/18<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25822/Panda+Bear%2CDam-Funk%2CWordless+Music+%26+RBMA+Presents%2CRed+Bull+Music+Academy+at+The+Warsaw+on+18+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=521fbf288c6c1.jpg&s=quarter" /></a></td><td class="listingArtist"><p class="artist party-artist"><a href="/event/25822/Panda+Bear%2CDam-Funk%2CWordless+Music+%26+RBMA+Presents%2CRed+Bull+Music+Academy+at+The+Warsaw+on+18+May+2014">Wordless Music & RBMA Presents</a></p><p><span class='artist'><a href='/event/25822/Panda+Bear%2CDam-Funk%2CWordless+Music+%26+RBMA+Presents%2CRed+Bull+Music+Academy+at+The+Warsaw+on+18+May+2014' >Panda Bear, Dam-Funk<br/></a></span></p></td><td class="listingVenue"><p class="artist festival-artist"><a href="/festival/Red+Bull+Music+Academy">Red Bull Music Academy</a></p><p class="listingLocation"><a href="/venues/The+Warsaw">The Warsaw</a></p><p class="listingNeighborhood">Greenpoint</p></td><td class="listingPrice"><p><a href="/event/25822/Panda+Bear%2CDam-Funk%2CWordless+Music+%26+RBMA+Presents%2CRed+Bull+Music+Academy+at+The+Warsaw+on+18+May+2014">$25</a></p><button class="event-btn-25822 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25822, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">4<span></span></p></td><td class="listingDate"><p><a href="/event/25598/Secret+Band%2CCirca+Survive%2CDMX%2CHidden+in+Plain+View%2CPianos+Become+The+Teeth%2CPatent+Pending%2CBallyhoo%21%2CFit+For+A+King%2CStructures%2CBlack+Breath%2CTiny+Moving+Parts%2CChon%2CBears+%26+Motorcycles%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+18+May+2014">5/18<br/>1:00 PM</a></p></td><td class="listingPic"><a href="/event/25598/Secret+Band%2CCirca+Survive%2CDMX%2CHidden+in+Plain+View%2CPianos+Become+The+Teeth%2CPatent+Pending%2CBallyhoo%21%2CFit+For+A+King%2CStructures%2CBlack+Breath%2CTiny+Moving+Parts%2CChon%2CBears+%26+Motorcycles%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+18+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=523b7af5af1db.jpg&s=quarter" /></a></td><td class="listingArtist"><p class="artist party-artist"><a href="/event/25598/Secret+Band%2CCirca+Survive%2CDMX%2CHidden+in+Plain+View%2CPianos+Become+The+Teeth%2CPatent+Pending%2CBallyhoo%21%2CFit+For+A+King%2CStructures%2CBlack+Breath%2CTiny+Moving+Parts%2CChon%2CBears+%26+Motorcycles%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+18+May+2014">Skate and Surf Festival</a></p><p><span class='artist'><a href='/event/25598/Secret+Band%2CCirca+Survive%2CDMX%2CHidden+in+Plain+View%2CPianos+Become+The+Teeth%2CPatent+Pending%2CBallyhoo%21%2CFit+For+A+King%2CStructures%2CBlack+Breath%2CTiny+Moving+Parts%2CChon%2CBears+%26+Motorcycles%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+18+May+2014' >Secret Band, Circa Survive, DMX, Hidden in Plain View, Pianos Become The Teeth, Patent Pending, Ballyhoo!, Fit For A King, Structures, Black Breath...<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Middletown+Sports+Complex">Middletown Sports Complex</a></p><p class="listingNeighborhood">Dirty Jersey</p></td><td class="listingPrice"><p><a href="/event/25598/Secret+Band%2CCirca+Survive%2CDMX%2CHidden+in+Plain+View%2CPianos+Become+The+Teeth%2CPatent+Pending%2CBallyhoo%21%2CFit+For+A+King%2CStructures%2CBlack+Breath%2CTiny+Moving+Parts%2CChon%2CBears+%26+Motorcycles%2CSkate+and+Surf+Festival+at+Middletown+Sports+Complex+on+18+May+2014">$104.99</a></p><button class="event-btn-25598 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25598, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">5<span></span></p></td><td class="listingDate"><p><a href="/event/26301/Young+Widows%2CHelms+Alee+at+Saint+Vitus+on+18+May+2014">5/18<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/26301/Young+Widows%2CHelms+Alee+at+Saint+Vitus+on+18+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=52246f04a1ce7.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/26301/Young+Widows%2CHelms+Alee+at+Saint+Vitus+on+18+May+2014' >Young Widows, Helms Alee<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Saint+Vitus">Saint Vitus</a></p><p class="listingNeighborhood">Greenpoint</p></td><td class="listingPrice"><p><a href="/event/26301/Young+Widows%2CHelms+Alee+at+Saint+Vitus+on+18+May+2014">$13</a></p><button class="event-btn-26301 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 26301, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowBuzzBlock'><td class="listingBuzz"><p class="movement">1<span></span></p></td><td class="listingDate"><p><a href="/event/25331/Swans%2CJenny+Hval+at+Music+Hall+of+Williamsburg+on+19+May+2014">5/19<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25331/Swans%2CJenny+Hval+at+Music+Hall+of+Williamsburg+on+19+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=522161663d50a.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25331/Swans%2CJenny+Hval+at+Music+Hall+of+Williamsburg+on+19+May+2014' >Swans, Jenny Hval<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Music+Hall+of+Williamsburg">Music Hall of Williamsburg</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25331/Swans%2CJenny+Hval+at+Music+Hall+of+Williamsburg+on+19+May+2014">$35</a></p><button class="event-btn-25331 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25331, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/25629/The+Faint+at+Bowery+Ballroom+on+19+May+2014">5/19<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25629/The+Faint+at+Bowery+Ballroom+on+19+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=522287e87a376.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25629/The+Faint+at+Bowery+Ballroom+on+19+May+2014' >The Faint<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25629/The+Faint+at+Bowery+Ballroom+on+19+May+2014">$25</a></p><button class="event-btn-25629 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25629, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz'><td class="listingBuzz"><p class="movement">3<span></span></p></td><td class="listingDate"><p><a href="/event/25939/Built+To+Spill+at+Brooklyn+Bowl+on+19+May+2014">5/19<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25939/Built+To+Spill+at+Brooklyn+Bowl+on+19+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51cf0eeab5961.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25939/Built+To+Spill+at+Brooklyn+Bowl+on+19+May+2014' >Built To Spill<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Brooklyn+Bowl">Brooklyn Bowl</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25939/Built+To+Spill+at+Brooklyn+Bowl+on+19+May+2014">$25</a></p><button class="event-btn-25939 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25939, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25842/Fu+Manchu+at+The+Mercury+Lounge+on+19+May+2014">5/19<br/>7:30 PM</a></p></td><td class="listingPic"><a href="/event/25842/Fu+Manchu+at+The+Mercury+Lounge+on+19+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51dcb6e8e4188.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25842/Fu+Manchu+at+The+Mercury+Lounge+on+19+May+2014' >Fu Manchu<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/The+Mercury+Lounge">The Mercury Lounge</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25842/Fu+Manchu+at+The+Mercury+Lounge+on+19+May+2014">$15</a></p><button class="event-btn-25842 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25842, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowBuzzBlock'><td class="listingBuzz"><p class="movement">1<span></span></p></td><td class="listingDate"><p><a href="/event/25721/Apache+Relay%2CThe+Weeks+at+Bowery+Ballroom+on+20+May+2014">5/20<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25721/Apache+Relay%2CThe+Weeks+at+Bowery+Ballroom+on+20+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5222636fe9f45.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25721/Apache+Relay%2CThe+Weeks+at+Bowery+Ballroom+on+20+May+2014' >Apache Relay, The Weeks<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Bowery+Ballroom">Bowery Ballroom</a></p><p class="listingNeighborhood">Lower East Side</p></td><td class="listingPrice"><p><a href="/event/25721/Apache+Relay%2CThe+Weeks+at+Bowery+Ballroom+on+20+May+2014">$12</a></p><button class="event-btn-25721 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25721, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow buzz listingRowOdd'><td class="listingBuzz"><p class="movement">2<span></span></p></td><td class="listingDate"><p><a href="/event/25756/Built+To+Spill%2CThe+Warm+Hair+at+Music+Hall+of+Williamsburg+on+20+May+2014">5/20<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25756/Built+To+Spill%2CThe+Warm+Hair+at+Music+Hall+of+Williamsburg+on+20+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=51cf0eeab5961.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25756/Built+To+Spill%2CThe+Warm+Hair+at+Music+Hall+of+Williamsburg+on+20+May+2014' >Built To Spill, The Warm Hair<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Music+Hall+of+Williamsburg">Music Hall of Williamsburg</a></p><p class="listingNeighborhood">Williamsburg</p></td><td class="listingPrice"><p><a href="/event/25756/Built+To+Spill%2CThe+Warm+Hair+at+Music+Hall+of+Williamsburg+on+20+May+2014">$30</a></p><button class="event-btn-25756 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25756, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow '><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25311/The+Neighbourhood%2CSummerstage+2014+at+Central+Park+Summerstage+on+20+May+2014">5/20<br/>5:00 PM</a></p></td><td class="listingPic"><a href="/event/25311/The+Neighbourhood%2CSummerstage+2014+at+Central+Park+Summerstage+on+20+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5222b0af58ad4.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25311/The+Neighbourhood%2CSummerstage+2014+at+Central+Park+Summerstage+on+20+May+2014' >The Neighbourhood<br/></a></span></p></td><td class="listingVenue"><p class="artist festival-artist"><a href="/festival/Summerstage+2014">Summerstage 2014</a></p><p class="listingLocation"><a href="/venues/Central+Park+Summerstage">Central Park Summerstage</a></p><p class="listingNeighborhood">Midtown</p></td><td class="listingPrice"><p><a href="/event/25311/The+Neighbourhood%2CSummerstage+2014+at+Central+Park+Summerstage+on+20+May+2014">$30</a></p><p class="listingPerk">Outdoors!</p><button class="event-btn-25311 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25311, true, 'Listing')">I Want To Go</button></td></tr><tr class='listingRow  listingRowOdd'><td class="listingBuzz"></td><td class="listingDate"><p><a href="/event/25883/Uh+Huh+Her+at+Highline+Ballroom+on+20+May+2014">5/20<br/>8:00 PM</a></p></td><td class="listingPic"><a href="/event/25883/Uh+Huh+Her+at+Highline+Ballroom+on+20+May+2014"><img width="130" class="listingpic" src="http://www.mysocialist.com/thumb/thumb.php?t=artistTickets&id=5223eb9824413.jpg&s=quarter" /></a></td><td class="listingArtist"><p><span class='artist'><a href='/event/25883/Uh+Huh+Her+at+Highline+Ballroom+on+20+May+2014' >Uh Huh Her<br/></a></span></p></td><td class="listingVenue"><p class="listingLocation"><a href="/venues/Highline+Ballroom">Highline Ballroom</a></p><p class="listingNeighborhood">Chelsea</p></td><td class="listingPrice"><p><a href="/event/25883/Uh+Huh+Her+at+Highline+Ballroom+on+20+May+2014">$25</a></p><button class="event-btn-25883 add-btn msl_button msl_button_tiny msl_button_pink" onclick="toggleEvent(this, 25883, true, 'Listing')">I Want To Go</button></td></tr>	</table>
+</div>
+				
+				   
+					
+				<div class="clear"></div>
+			
+					<div class="pagination_wrapper" >
+	<div class="pagination">
+<a id="view-previous-listing-link" class="msl_button msl_pagination_fixed msl_button_medium" href="/concerts?show=all&search=1">PREVIOUS</a><a href="/concerts?page=1" class="msl_button msl_button_medium ">1</a><a href="/concerts?page=2" class="msl_button msl_button_medium ">2</a><a href="/concerts?page=3" class="msl_button msl_button_medium ">3</a><a href="/concerts?page=4" class="msl_button msl_button_medium ">4</a><a href="javascript:void(0);" class="curr msl_button msl_button_medium ">5</a><a href="/concerts?page=6" class="msl_button msl_button_medium ">6</a><a href="/concerts?page=7" class="msl_button msl_button_medium ">7</a><span style="color:black">...</span><a href="/concerts?page=10" class="msl_button msl_button_medium post-ellipsis">10</a><a href="/concerts?page=11" class="msl_button msl_button_medium ">11</a><a id="view-next-listing-link" class="msl_button msl_pagination_fixed msl_button_medium" href="/concerts?show=all&search=1">NEXT</a><a id="view-all-listing-link" class="msl_button msl_pagination_fixed msl_button_medium" href="/concerts?show=all&search=1">ALL</a>	</div> 
+	</div> 					             	
+                
+                <div class="clear"></div>
+				<!-- Column 1 end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	if ($('#venue-fine-print-text').height() > 90) {
+		$('#venue-fine-print-more').show();
+	}
+});
+
+function toggleFinePrint() 
+{
+	if ($('#venue-fine-print-mask').hasClass('unmasked')) {
+		$('#venue-fine-print-mask').removeClass('unmasked');
+		$('#venue-fine-print-more a').text('see more');
+	} else {
+		$('#venue-fine-print-mask').addClass('unmasked');
+		$('#venue-fine-print-more a').text('see less');
+	}
+}
+</script>
+
+<!-- 1398531393.4237 - 1398531394.0866 - 0.66295599937439 -->
+
+
+		<div class="clear"></div>
+</div><!-- Content End -->
+
+<div class="clear"></div>
+</div><!-- Wrapper End -->
+
+<div id="footer">
+	<div class="wrapper">
+		<div id="footer-main-links">
+			<div class="msl_logo"></div>
+			
+			<div id="footer-social-links">
+				<a class="small-facebook-jumplink-white" href="http://facebook.com/mysociallist" target="_blank">&nbsp;</a>
+				<a class="small-twitter-jumplink-white" href="http://twitter.com/mysociallist" target="_blank">&nbsp;</a>
+				<a class="small-meetup-jumplink-white" href="http://www.meetup.com/Brooklyn-Lower-East-Side-Indie-Show-Meetup/" target="_blank">&nbsp;</a>
+			</div>
+				
+		</div>
+		<div id="footer-site-links">
+			<p><a href="/blog/about">ABOUT</a></p>
+			<p><a href="/blog/tandc">TERMS &amp; CONDITIONS</a></p>
+			<p><a href="/blog/privacypolicy">PRIVACY POLICY</a></p>
+			<p><a href="/account/settings">SETTINGS</a></p>
+		</div>
+		
+		<div id="footer-adlink"><a href="http://www.youbemyheart.com/"><b>MSL SUPPORTS 826</b></a></div>
+
+		<div id="footer-designer"><a href="http://www.alexandrafredrichs.com/">site design by <b>Alex Fredrichs</b></a></div>
+		
+	</div>
+</div>
+
+<script type="text/javascript" src="/min/?f=public/jquery/jquery.datepick.js"></script>
+<!-- <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script> -->
+<script type='text/javascript'>
+//<![CDATA[
+
+function executeMainSearch() {
+	if($('#nav-search').val()!='Search Shows') {
+		var nsf = document.getElementById("site-main-search-form");
+		nsf.submit();
+	}
+}
+
+function enableDatePicker()
+{
+	var dateToday = new Date();
+	$.datepick.setDefaults({
+			mandatory: true,
+			rangeSelect: true,
+			numberOfMonths: 1,
+			showAnim: 'fadeIn',
+			changeYear: false,
+			changeMonth: false,
+			duration: 200,
+			minDate: dateToday,
+			closeText: '<div alt="Close Date Picker" class="dpCloseBtn simplemodal-close" id="dpCloseBtn"></div>',
+			dateFormat: 'mm/dd/yy',
+			onClose: function(){
+				$('#when-datepicker-box').hide();
+				$('#searchCalendarIconAction').attr('href','javascript: showDatePicker();');
+				//if($("#sml-dropdown-concertSearchArrow").css('display')=='block') popDatePickerSimple();
+			}
+		});
+
+
+	$('#when').datepick();
+	$('#when').datepick('show');
+	$('#when-datepicker-body').append( $('#datepick-div') );
+}
+
+$('#dpCloseBtn').live('click', hideDatePicker);
+
+$('.mslsync-random-buzzed').live('mouseover', function() {$(this).find('.mslsync-random-buzzed-hover').show();});
+$('.mslsync-random-buzzed').live('mouseout', function() {$(this).find('.mslsync-random-buzzed-hover').hide();});
+
+function showDatePicker(){ 
+
+	$('#when-datepicker-box').show();
+	
+	$('#searchCalendarIconAction').attr('href','javascript: hideDatePicker();');
+
+	var m = $("#sml-dropdown-concertSearchArrow");	
+	
+
+	/*
+	if( m.css('display')=='block' ){	
+		popDatePickerSimple();
+	}
+	*/
+}
+function hideDatePicker(){ 
+	$('#when-datepicker-box').hide();
+	$('#searchCalendarIconAction').attr('href','javascript: showDatePicker();');
+}
+
+function simpleWhenPicker(date_token)
+{
+
+	$('#when').val(date_token);
+	//if($("#sml-dropdown-concertSearchArrow").css('display')=='block') popDatePickerSimple();
+}
+
+/*
+function popDatePickerSimple()
+{
+	var t = document.getElementById("when-container");
+	
+	var m = $("#sml-dropdown-concertSearchArrow");
+	$(t).append(m);
+	
+	var m_display = (m.css('display')=='block') ? 'none' : 'block';
+
+
+	m.css('left',1);
+	m.css('top',27);
+
+	m.css('display',m_display);
+
+}
+*/
+
+function submitDatePicker() {
+	jQuery.datepick._hideDatepick();
+	$('#dateSearchForm').submit();
+}
+
+$(document).ready(function(){
+
+	$('#header').click(function(event) {toggleLoginScreen(false);});
+	$('#headerScreen').click(function(event) {toggleLoginScreen(false);});
+	$('#headerScreenLoginBox').click(function(event) {event.stopPropagation();});
+		
+		enableDatePicker();
+	});
+
+//]]>
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16533679-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<div id="feedbackModal2" class="msl-modal-popup">
+
+	<div id="feedback-loading" style="position: absolute; z-index: 2000; height: 442px; background-color: rgb(255, 255, 255); opacity: 0.8;display:none;">
+	    <p class="smalltalk" style="margin: 0 175px;position: absolute;top: 46px; font-size: 22px;">Cool Thanks!</p>
+	    <img src="/img/ajax-loader.gif" style="margin: 0 224px;position: absolute;top: 105px;">
+	</div>
+
+	<div class="top msl-largebox-title">
+		<h3>Feedback</h3>
+	</div>	
+	<div class="mid">
+		<div id="feedback_form_submit">
+			
+			<div id="feedbackModalLeft">
+				<div class='feedbackModalLabel'>Name:</div>
+				<input class='feedbackModalInput' type='text' name='feedback_submit_name' id='feedback_submit_name' value='' maxlength='100' />
+		
+				<div class='feedbackModalLabel'>E-mail:</div>
+				<input class='feedbackModalInput' type='text' name='feedback_submit_email' id='feedback_submit_email' value='' maxlength='100' />
+			
+				<div class='feedbackModalLabel'>Feedback:</div>
+				<textarea name='feedback_comment' id='feedback_comment'></textarea>
+			</div>
+			<div id="feedbackModalRightSubmit">
+				<div class="feedbackModalToggler">Submit a Show / <a href="#" id="feedback_correct">Correct a Show</a></div>
+
+				
+				<div class='feedbackModalLabel'>Date:</div>
+				<input class='feedbackModalInput' type="text" name="feedback_date" id='feedback_date' />
+				
+				<div class='feedbackModalLabel'>Artist(s):</div>
+				<input class='feedbackModalInput' type='text' name='feedback_artists' id='feedback_artists' value='' maxlength='200' style="" />
+		
+				<div class='feedbackModalLabel'>Venue:</div>
+				<input class='feedbackModalInput' type='text' name='feedback_venue' id='feedback_venue' value='' maxlength='100' style="" />		
+			
+				<button class="msl_button msl_button_pink msl_button_large" onclick="submitFeedbackSubmit()">Submit</button>
+			</div>
+			<div id="feedbackModalRightCorrect" style="display: none">
+				<div class="feedbackModalToggler"><a href="#" id="feedback_submit">Submit a Show</a> / Correct a Show</div>
+				<div class='feedbackModalLabel'>Show to correct (Enter artist, venue &amp; date):</div>
+				<input class='feedbackModalInput' type='text' name='feedback_correct_show' id='feedback_correct_show' value='' maxlength='100' />
+				
+				<div class='feedbackModalLabel'>Correction (What's wrong?): </div>
+				<textarea name='feedback_correction' id='feedback_correction' name='feedback_correction'></textarea>
+			
+				<button class="msl_button msl_button_pink msl_button_large" onclick="submitFeedbackCorrect()">Submit</button>
+			</div>
+			<div class="clear"></div>
+			
+			
+	
+		</div>
+	</div>
+
+</div>
+
+<div id="manage-artist" class="msl-modal-popup">
+	
+	<div class="mid" style="height:auto;">
+		<h2>We found the following artists that matched your search:</h2>
+		<div id="manage-popup-list"></div>
+		
+	</div>
+</div>
+
+
+
+<div id="eventLinkPopup">
+	<div class="simplemodal-close" onclick="closeEventLinkPopup()"></div>
+	<div class="outbound-link website-link msl_website_button_small">website</div>
+	<div class="outbound-link myspace-link msl_myspace_button_small">myspace</div>
+	<div class="outbound-link facebook-link msl_facebook_button_small">facebook</div>
+	<div class="outbound-link twitter-link msl_twitter_button_small">twitter</div>
+</div>
+
+<div id="loginModal" class="msl-modal-popup">
+	<div id="loginModalLeft">
+		<h2>Log In</h2>
+		<label for="modallogin_email_input">Email:</label>
+		<input id="modallogin_email_input" type="text" />
+		<div class="clear"></div>
+		<label for="modallogin_password_input">Password:</label><a style="float:right; color: #23a7d2;" href="/account/forgotpassword">Forgot your password?</a>
+		<input id="modallogin_password_input" type="password" />
+		
+		<div style="height: 20px;clear: both;width: 100%;"></div>
+		<a style="width: 100%; padding: 14px 0px; border 1px solid #e2445d;" onclick="mslSignIn($('#modallogin_email_input').val(), $('#modallogin_password_input').val())" class="msl_button msl_button_large msl_button_pink">Sign in</a>
+		<div style="font-style: italic; height: 28px; line-height: 20px; font-weight: bold; text-align: center; font-size: 15px;">or</div>
+		<a style="width: 100%; padding: 14px 0px; background: #3c5a98; position: relative;" class="msl_button msl_button_large msl_button_facebook" onclick="requireFbgSession(signinWithFBAccessToken, gotoMyList)"><div class="small-facebook-jumplink-white" style="position:absolute;top: 9px; left: 8px; padding-right: 12px;"></div><span style="margin-left: 28px;">Sign in with Facebook</span></a>
+	
+	</div>
+	<div id="loginModalRight">
+	
+		<h2><b>NEVER MISS</b><br/>ANOTHER SHOW</h2>
+		<p>Sign-up today and never miss another show again. Customize your artist list and we will alert you to upcoming shows and amazing sales for all of your favorite artists.</p>
+		<a style="width: 225px;margin-top: 83px;" class="msl_button msl_button_large msl_button_white" href="/register">Register Now</a>
+	
+	</div>
+
+</div>
+
+<div id="lastfmSyncModal" class="msl-modal-popup">
+	<div class="mid" style="margin-top:40px;">
+		<h2>Sync with Last.Fm</h2>
+		<label style="margin-top:20px; display:block;" for="lastfmSyncInput">Enter your <span style="color:#e2445d;">Last.fm</span> username</label>
+		<input id="lastfmSyncInput" type="text" />
+		<button style="width: 100%;" onclick="syncToLastFM()" class="msl_button msl_button_pink msl_button_large">Save</button>
+	</div>
+</div>
+
+<div id="artistSyncModal" class="msl-modal-popup">
+	<div class="top msl-largebox-title">
+		<h3></h3>
+	</div>	
+	<div class="mid">
+		<p>Un-check the box if you do not want to add the artist to your list</p>
+		<div class="msl-round-box">
+			
+		</div>
+		<button onclick="saveSyncedArtists()" class="msl_button msl_button_pink msl_button_large">Add Artists</button>
+	</div>
+	<img src="/img/ajax-loader.gif" style="top:100px" class="simplemodal-loading-spiral">
+</div>
+
+<script>
+	$('#feedback_submit').click(function(event){
+		event.preventDefault();
+
+		$('#feedbackModalRightSubmit').show();
+		$('#feedbackModalRightCorrect').hide();
+	});
+	$('#feedback_correct').click(function(event){
+		event.preventDefault();
+
+		$('#feedbackModalRightSubmit').hide();
+		$('#feedbackModalRightCorrect').show();
+	});
+</script>
+
+<div id="fb-root"></div>
+
+<script>
+
+function checkEnterLogin(e) {
+	if(e.keyCode == 13){
+		mslSignIn($('#login_email_input').val(), $('#login_password_input').val())
+	}
+}
+
+$('#login_password_input').keydown(checkEnterLogin);
+
+
+var fb_userId;
+var fb_init_loaded = false;
+var fb_onload_msl_function = function(){};
+
+  fb_userId = '';
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId   : '269632832169',
+      channelUrl  : '/public/xd_receiver.htm',
+      status  : true, // check login status
+      cookie  : true, // enable cookies to allow the server to access the session
+      xfbml   : true, // parse XFBML
+      oauth   : true
+    });
+
+    fb_init_loaded = true;
+    fb_onload_msl_function();
+
+	function update_fb_id(response){
+	    if (response.authResponse) {
+	    	//user is already logged in and connected
+	      	fb_userId = response.authResponse.userID;
+	    } else {
+			//user is not connected to your app or logged out
+			fb_userId = '';
+	    }
+	    
+	    //alert(fb_userId);
+	}
+
+  // run once with current status and whenever the status changes
+  FB.getLoginStatus(update_fb_id);
+  FB.Event.subscribe('auth.statusChange', update_fb_id);
+  };
+
+  (function() {
+  var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-4.newrelic.com","licenseKey":"ae1c9cfbe6","applicationID":"1173963","transactionName":"NVcDNURWXxJTARVaCQwdIAJCXl4PHQYEVQcXXhVORVJQE1EKTloIBlcZ","queueTime":0,"applicationTime":743,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"jserror.newrelic.com","agent":"js-agent.newrelic.com\/nr-353.min.js"}</script></body>
+</html>
