@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @NUM_DAYS = 7
+    @NUM_DAYS = 12
     @time = Time.now
     @days = []
     @search_days = []
